@@ -8,13 +8,13 @@ import (
 )
 
 type Flight struct {
-	Id          string
-	Number      string
-	AirlineName string
-	Source      string
-	Destination string
-	Capacity    int
-	Price       float32
+	Id          string     `json:"id"`
+	Number      string     `json:"number"`        //pascal case (first word starts with small letter and remaining words start with capital)
+	AirlineName string     `json:"airline_name"` //snake case(two words seperated by _)
+	Source      string     `json:"source"`
+	Destination string     `json:"destination"`
+	Capacity    int        `json:"capacity"`
+	Price       float32    `json:"price"`
 }
 
 func readAllFlights(c *gin.Context) {
