@@ -8,13 +8,14 @@ import PageHeader from "./header/PageHeader"
 function App() {
   return (
     <>     
-     <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/flights/list" element={<FlightList/>}/>
           <Route path="/flights/create" element={<FlightCreate/>}/>
           <Route path="/flights/edit/:id" element={<FlightEdit/>}/>
         </Routes>
       </BrowserRouter>
+      
     </>
   )
 }

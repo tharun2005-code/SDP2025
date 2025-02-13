@@ -1,10 +1,18 @@
+import { useNavigate } from "react-router-dom";
 import PageHeader from "../header/PageHeader";
 
 function FlightEdit() {
+    const navigate = useNavigate()
+    const onGo = function() {
+        navigate('/flights/list')
+    }
+    // change happening through code
     return (
         <>
             <PageHeader  PageNumber={1}/>
-            <h3><a href="/flights/list" className="btn btn-light">Go Back</a>Edit Flight Ticket Price</h3>
+            <h3><a href="/flights/list" className="btn btn-light">Go Back</a>Edit Flight Ticket Price</h3> {/*change happening through hyperlink*/}
+            <button class = "btn btn-success" 
+                onClick={onGo}>Go back using code</button> {/*change happening through code*/} 
             <div className="container">
                 <div className="form-group mb-3">
                     <label htmlFor="number" className="form-label">Flight Number:</label>

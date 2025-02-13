@@ -1,4 +1,4 @@
-module examle.com/main
+module example.com/main
 
 go 1.24.0
 
