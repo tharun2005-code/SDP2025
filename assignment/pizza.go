@@ -8,11 +8,11 @@ import (
 )
 
 type Pizza struct {
-	Id       string
-	Name     string
-	Size     string
-	Category string
-	Price    float32
+	Id       string  `json:"id"`
+	Name     string  `json:"name"`
+	Size     string  `json:"size"`
+	Category string  `json:"category"`
+	Price    float32 `json:"price"`
 }
 
 func readAllPizzas(c *gin.Context) {

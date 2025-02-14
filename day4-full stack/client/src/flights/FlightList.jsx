@@ -3,22 +3,18 @@ import PageHeader from "../header/PageHeader";
 import axios from 'axios';
 
 function FlightList() {
-    // maintaining and creating the state
-    const [flights, setFlights] = useState([ ]);
-    const readAllFlights =async() =>{
-        try{
-            const baseUrl='http://localhost:8080'
-            const response =axios.get(`${baseUrl}/flights`);
+    const [flights, setFlights] = useState([]);
+    const readAllFlights = async () => {
+        try {
+            const baseUrl = 'http://localhost:8080'
+            const response = await axios.get(`${baseUrl}/flights`);
             setFlights(response.data);
-        }catch(error){
-             alert('Server Error');
+            
+        } catch(error) {
+            alert('Server Error');
         }
-    }; 
-    useEffect(()=>{},[]);
-    //initialize with either JSON, array or any primitive data
-    // state is immutable
-    // using setFlights for the changes to be reflected in the components
-
+    };
+    useEffect(()=>{ readAllFlights(); },[]);
     return (
         <>
             <PageHeader PageNumber={1}/>
@@ -35,7 +31,7 @@ function FlightList() {
                         </tr>
                     </thead>
                     <tbody>
-                        { flights.map ( (flight) => {
+                        { flights.map( (flight) => {
                             return (
                             <tr>
                                 <th scope="row">{flight.number}</th>
@@ -48,8 +44,9 @@ function FlightList() {
                                 </td>
                             </tr>
                             );
-                        })}
-
+                        } ) 
+                        }
+                        
                         
                     </tbody>
                 </table>

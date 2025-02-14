@@ -1,5 +1,5 @@
 function PageHeader( { PageNumber } ) {
-    return ( //anything within the return statement is pure javascript (XML within javascript therefore JSX)
+    return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
@@ -22,7 +22,5 @@ function PageHeader( { PageNumber } ) {
         </>
     );
 }
-
-// ```src/header/PageHeader.jsx
 
 export default PageHeader;
